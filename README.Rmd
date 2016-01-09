@@ -1,4 +1,4 @@
-# [Adapting maachine learning techniques to censored time-to-event health record data: a general-purpose approach using inverse probability of censoring weighting](https://sites.google.com/site/dmvock/)
+# [Adapting machine learning techniques to censored time-to-event health record data: a general-purpose approach using inverse probability of censoring weighting](https://sites.google.com/site/dmvock/)
 
 ### [David M. Vock](https://sites.google.com/site/dmvock/)
 
@@ -7,7 +7,7 @@
 
 ---
 
-The files in this repository comprise the source code for reproducing the work in the manuscript **Adapting maachine learning techniques to censored time-to-event health record data: a general-purpose approach using inverse probability of censoring weighting**. Code to implement the machine learning methods using IPCW and other ad hoc techniques is provided in the R programming language. Due to privacy concerns, the analytic dataset cannot be made publically available. 
+The files in this repository comprise the source code for reproducing the work in the manuscript **Adapting maachine learning techniques to censored time-to-event health record data: a general-purpose approach using inverse probability of censoring weighting**. Code to implement the machine learning methods using IPCW and other ad hoc techniques is provided in the R programming language. Due to privacy concerns, the analytic dataset cannot be made publicly available. 
 
 ### File Organization
 
