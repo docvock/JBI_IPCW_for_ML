@@ -1,0 +1,29 @@
+# [Adapting maachine learning techniques to censored time-to-event health record data: a general-purpose approach using inverse probability of censoring weighting](https://sites.google.com/site/dmvock/)
+
+### [David M. Vock](https://sites.google.com/site/dmvock/)
+
+### [University of Minnesota Division of Biostatistics](http://sph.umn.edu/biostatistics/)
+
+
+---
+
+The files in this repository comprise the source code for reproducing the work in the manuscript **Adapting maachine learning techniques to censored time-to-event health record data: a general-purpose approach using inverse probability of censoring weighting**. Code to implement the machine learning methods using IPCW and other ad hoc techniques is provided in the R programming language. Due to privacy concerns, the analytic dataset cannot be made publically available. 
+
+### File Organization
+
+The file `IPCW_analysis.R` is the main analysis file which which the machine learning techniques (logistic regression, GAM, recursive partitioning, k-NN) to estimating probability of having a cardiovascular adverse event within 5 years. Four different techniques to handle observations for which the event status cannot be determined are used including 1) discarding the observations, 2) treating those observations as if the event did not occur, 3) splitting the observations into two, one where E=1 and the other with E=0 and 4) using IPCW. The file also outputs the tables for the calibration and discrimination metrics. This file relies on the wrapper functions written in `IPCW_fns.R` and `model-evaluation-metric.R`.
+
+The files `graphics.R` and `bayesian_network_joint.R` provide code to visualize the amount of follow-up and to generate the figure which depicts the Bayesian network. 
+
+
+
+### Session Info
+This manuscript was compiled with [RStudio](http://www.rstudio.com/) (v. 0.98.983 for Windows) with the following R session:
+
+```{r, echo=FALSE}
+sessionInfo()
+```
+
+---
+
+
