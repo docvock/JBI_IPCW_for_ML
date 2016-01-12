@@ -18,8 +18,8 @@
 
 setwd("//hifs00.ahc.umn.edu/Data/Carlson/Portal")
 dat.base <- "Data/DataLock/DataLockv2.3.1/"
-source("C:\\Users\\bstvock\\Documents\\research\\IPCW_machine_learning\\ML-for-censored-data\\code\\IPCW_fns.R")
-source("C:\\Users\\bstvock\\Documents\\research\\IPCW_machine_learning\\ML-for-censored-data\\code\\model-evaluation-metrics.R")
+source("C:\\Users\\bstvock\\Documents\\research\\IPCW_machine_learning\\ML-for-censored-data\\code\\JBI_IPCW_for_ML\\IPCW_fns.R")
+source("C:\\Users\\bstvock\\Documents\\research\\IPCW_machine_learning\\ML-for-censored-data\\code\\JBI_IPCW_for_ML\\model-evaluation-metrics.R")
 
 # libraries used
 library(data.table)
@@ -32,8 +32,6 @@ library(survival) # for Kaplan-Meier estimators
 library(xtable) # create tables for latex
 library(caret)
 library(mvtnorm) 
-library(devtools)
-library(survMisc)
 quantile <- stats::quantile
 cancor <- stats::cancor
 
@@ -188,8 +186,10 @@ print( xtable(results.tab,
 
 ## Calibration Plots
 
-pdf("C:\\Users\\bstvock\\Documents\\research\\
-	IPCW_machine_learning\\ML-for-censored-data\\code\\calibration_plots.pdf", height = 15, width = 5)
+pdf("C:\\Users\\bstvock\\Documents\\research\\IPCW_machine_learning\\ML-for-censored-data\\code\\JBI_IPCW_for_ML\\calibration_plots.pdf", height = 15, width = 5)
+setEPS()
+postscript("C:\\Users\\bstvock\\Documents\\research\\IPCW_machine_learning\\ML-for-censored-data\\code\\JBI_IPCW_for_ML\\calibration_plots.eps", height = 15, width = 5)
+
 par(mfrow=c(5,1))
 # Recursive Partitioning
 calib.plot(ML.preds[1:4], cutpts=risk.cutpts, test.dat=HP.test, 

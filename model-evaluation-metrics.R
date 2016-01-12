@@ -121,9 +121,13 @@ calib.func <- function(p, cutpts, test.dat) {
 	risk.class <- cut(p, cutpts, labels=FALSE)
 	lev.stats <- sapply(1 : (length(cutpts) - 1), function(f) {
 		ind <- which(risk.class == f)
-		S.KM <- calcSurv(Surv(test.dat$T.use[ind], test.dat$C.use[ind]))
-		ind.surv <- max(which(S.KM$t <= (SURVTIME*365)))
-		p.KM <- S.KM$SKM[ind.surv]
+		S.KM <- survfit(Surv(test.dat$T.use[ind], test.dat$C.use[ind]) ~ 1, error = "greenwood")
+		ind.surv <- max(which(S.KM$time <= (SURVTIME*365)))
+		p.KM <- S.KM$surv[ind.surv]
+		
+		#S.KM <- calcSurv(Surv(test.dat$T.use[ind], test.dat$C.use[ind]))
+		#ind.surv <- max(which(S.KM$t <= (SURVTIME*365)))
+		#p.KM <- S.KM$SKM[ind.surv]
 		c(mean(p[ind], na.rm = TRUE),p.KM)})
 	
 	calib.func <- 1-t(lev.stats)
